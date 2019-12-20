@@ -10,7 +10,7 @@ Postgres REST CRUD lambda for various thing I track via a database.
   * role must have `AWSLambdaVPCAccessExecutionRole`
   * must must share security group for RDS instance
 * AWS API gateway 
-  * mapping template, to pass along path, method and query params
+  * mapping template to pass along path, method and query params
   
 ## Application
 
