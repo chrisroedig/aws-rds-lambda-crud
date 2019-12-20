@@ -1,12 +1,19 @@
+import database
 from models import Climb
 import controllers
 
 def lambda_handler(event, context):
-    # NOTE: requires mapping template on API gateway 
+    # NOTE: requires mapping template on API gateway
+    print(event)
+    print(database.config)
     path = event['context']['resource-path'][1:].replace("/","_")
     method = event['context']['http-method'].lower()
-    params = event['body_json']
+    params = event['body-json']
     query_params = event['params']['querystring']
+    dispatch_method(method, path, params, query_params)
+    return {
+        "status": "OK"
+    }
 
 
 def dispatch_method(method, path, params, query_params):

@@ -3,7 +3,7 @@ import settings
 from os import environ
 
 config = {
-    'mysql': {
+    'postgres': {
         'driver': 'postgres',
         'host': environ.get('DB_HOST'),
         'database': environ.get('DB_NAME'),
