@@ -7,4 +7,8 @@ class Climbs():
 
     def post(self):
         self.climb = Climb.create(self.params)
-        return True
+        return self.climb.to_dict()
+    
+    def get(self):
+        self.climbs = Climb.all()
+        return [ c.to_dict() for c in self.climbs ]   
